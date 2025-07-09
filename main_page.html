@@ -44,158 +44,181 @@
         /* Show content when radio button is checked */
         #content1:checked ~ .content-container #section1,
         #content2:checked ~ .content-container #section2,
-        #content3:checked ~ .content-container #section3 {
+        #content3:checked ~ .content-container #section3,
+        #content4:checked ~ .content-container #section4,
+        #content5:checked ~ .content-container #section5 {
             display: block;
         }
 
-	.attendance-box {
-    width: 250px;
-    height: 200px;
-    border: 2px solid #3498db;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+        .attendance-box {
+            width: 250px;
+            height: 200px;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-.attendance-percentage {
-    font-size: 48px;
-    font-weight: bold;
-    color: #2ecc71;
-}
+        .attendance-percentage {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2ecc71;
+        }
 
-.attendance-label {
-    font-size: 18px;
-    color: #34495e;
-    margin-top: 10px;
-}
+        .attendance-label {
+            font-size: 18px;
+            color: #34495e;
+            margin-top: 10px;
+        }
 
-.attendance-status {
-    font-size: 16px;
-    margin-top: 10px;
-    color: #7f8c8d;
-}
-	.dropdown-container {
-    width: 300px;
-    margin: 20px;
-}
+        .attendance-status {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #7f8c8d;
+        }
+        
+        .dropdown-container {
+            width: 300px;
+            margin: 20px;
+        }
 
-.dropdown-header {
-    background-color: #f1f1f1;
-    padding: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .dropdown-header {
+            background-color: #f1f1f1;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.dropdown-content {
-    display: none;
-    padding: 10px;
-    background-color: #f9f9f9;
-}
+        .dropdown-content {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
 
-.dropdown-toggle:checked ~ .dropdown-content {
-    display: block;
-}
+        .dropdown-toggle:checked ~ .dropdown-content {
+            display: block;
+        }
 
-.subject-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    border-bottom: 1px solid #eee;
-}
-
-
+        .subject-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <input type="radio" name="content" id="content1" hidden>
+        <input type="radio" name="content" id="content1" hidden checked>
         <input type="radio" name="content" id="content2" hidden>
         <input type="radio" name="content" id="content3" hidden>
+        <input type="radio" name="content" id="content4" hidden>
+        <input type="radio" name="content" id="content5" hidden>
         
         <div class="navigation">
             <label for="content1">Dashboard</label>
             <label for="content2">Faculty</label>
-            <label for="content3">My Profile</label>
+            <label for="content3">Fee</label>
+            <label for="content4">Attendance</label>
+            <label for="content5">My Profile</label>
         </div>
         
         <div class="content-container">
             <div id="section1" class="content">
                 <h2>Content for Dashboard</h2>
                 <p>This is the detailed content for the first link.</p>
-		<div class="attendance-percentage">85%</div>
-    <div class="attendance-label">Total Attendance</div>
-    <div class="attendance-status">
-        Status: 
-        <span class="good">Good</span>
-            </div>
+                <div class="attendance-percentage">85%</div>
+                <div class="attendance-label">Total Attendance</div>
+                <div class="attendance-status">
+                    Status: 
+                    <span class="good">Good</span>
+                </div>
 
-	    <div class="dropdown-container">
-    <!-- Series 1 Dropdown -->
-    <input type="checkbox" id="series1" class="dropdown-toggle">
-    <label for="series1" class="dropdown-header">Series 1</label>
-    <div class="dropdown-content">
-        <div class="subject-item">
-            <span>Computer Networks</span>
-            <span>40</span>
-        </div>
-        <div class="subject-item">
-            <span>Automata</span>
-            <span>35</span>
-        </div>
-        <div class="subject-item">
-            <span>Architecture of IC</span>
-            <span>45</span>
-        </div>
-    </div>
+                <div class="dropdown-container">
+                    <!-- Series 1 Dropdown -->
+                    <div class="dropdown">
+                        <input type="checkbox" id="series1" class="dropdown-toggle">
+                        <label for="series1" class="dropdown-header">Series 1</label>
+                        <div class="dropdown-content">
+                            <div class="subject-item">
+                                <span>Computer Networks</span>
+                                <span>40</span>
+                            </div>
+                            <div class="subject-item">
+                                <span>Automata</span>
+                                <span>35</span>
+                            </div>
+                            <div class="subject-item">
+                                <span>Architecture of IC</span>
+                                <span>45</span>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Series 2 Dropdown -->
-        <input type="checkbox" id="series2" class="dropdown-toggle">
-        <label for="series2" class="dropdown-header">Series 2</label>
-        <div class="dropdown-content">
-            <div class="subject-item">
-                <span>Computer Networks</span>
-                <span>38</span>
-            </div>
-            <div class="subject-item">
-                <span>Automata</span>
-                <span>42</span>
-            </div>
-            <div class="subject-item">
-                <span>Architecture of IC</span>
-                <span>37</span>
-            </div>
-        </div>
+                    <!-- Series 2 Dropdown -->
+                    <div class="dropdown">
+                        <input type="checkbox" id="series2" class="dropdown-toggle">
+                        <label for="series2" class="dropdown-header">Series 2</label>
+                        <div class="dropdown-content">
+                            <div class="subject-item">
+                                <span>Computer Networks</span>
+                                <span>38</span>
+                            </div>
+                            <div class="subject-item">
+                                <span>Automata</span>
+                                <span>42</span>
+                            </div>
+                            <div class="subject-item">
+                                <span>Architecture of IC</span>
+                                <span>37</span>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Model Dropdown -->
-        <input type="checkbox" id="model" class="dropdown-toggle">
-        <label for="model" class="dropdown-header">Model</label>
-        <div class="dropdown-content">
-            <div class="subject-item">
-                <span>Computer Networks</span>
-                <span>45</span>
+                    <!-- Model Dropdown -->
+                    <div class="dropdown">
+                        <input type="checkbox" id="model" class="dropdown-toggle">
+                        <label for="model" class="dropdown-header">Model</label>
+                        <div class="dropdown-content">
+                            <div class="subject-item">
+                                <span>Computer Networks</span>
+                                <span>45</span>
+                            </div>
+                            <div class="subject-item">
+                                <span>Automata</span>
+                                <span>40</span>
+                            </div>
+                            <div class="subject-item">
+                                <span>Architecture of IC</span>
+                                <span>42</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="subject-item">
-                <span>Automata</span>
-                <span>40</span>
-            </div>
-            <div class="subject-item">
-                <span>Architecture of IC</span>
-                <span>42</span>
-            </div>
-        </div>
-</div>
 
             <div id="section2" class="content">
                 <h2>Content for Faculty</h2>
                 <p>This is the detailed content for the second link.</p>
             </div>
+            
             <div id="section3" class="content">
+                <h2>Content for Fee</h2>
+                <p>This is the detailed content for the Fee section.</p>
+            </div>
+            
+            <div id="section4" class="content">
+                <h2>Content for Attendance</h2>
+                <p>This is the detailed content for the Attendance section.</p>
+            </div>
+            
+            <div id="section5" class="content">
                 <h2>Content for My Profile</h2>
                 <p>This is the detailed content for the third link.</p>
             </div>
