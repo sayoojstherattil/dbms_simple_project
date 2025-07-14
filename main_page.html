@@ -26,7 +26,7 @@
         .content {
             display: none;
         }
-        
+       
         /* Links styling */
         .navigation label {
             display: block;
@@ -40,7 +40,7 @@
         .navigation label:hover {
             background-color: #e0e0e0;
         }
-        
+       
         /* Show content when radio button is checked */
         #content1:checked ~ .content-container #section1,
         #content2:checked ~ .content-container #section2,
@@ -80,7 +80,7 @@
             margin-top: 10px;
             color: #7f8c8d;
         }
-        
+       
         .dropdown-container {
             width: 300px;
             margin: 20px;
@@ -111,6 +111,24 @@
             padding: 5px 0;
             border-bottom: 1px solid #eee;
         }
+
+.fee-details-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    .fee-details-table th,
+    .fee-details-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    .fee-details-table thead {
+        background-color: #f2f2f2;
+    }
+    .status-pending { color: orange; }
+    .status-unpaid { color: red; }
+    .status-paid { color: green; }
     </style>
 </head>
 <body>
@@ -120,7 +138,7 @@
         <input type="radio" name="content" id="content3" hidden>
         <input type="radio" name="content" id="content4" hidden>
         <input type="radio" name="content" id="content5" hidden>
-        
+       
         <div class="navigation">
             <label for="content1">Dashboard</label>
             <label for="content2">Faculty</label>
@@ -128,7 +146,7 @@
             <label for="content4">Attendance</label>
             <label for="content5">My Profile</label>
         </div>
-        
+       
         <div class="content-container">
             <div id="section1" class="content">
                 <h2>Content for Dashboard</h2>
@@ -136,7 +154,7 @@
                 <div class="attendance-percentage">85%</div>
                 <div class="attendance-label">Total Attendance</div>
                 <div class="attendance-status">
-                    Status: 
+                    Status:
                     <span class="good">Good</span>
                 </div>
 
@@ -207,17 +225,85 @@
                 <h2>Content for Faculty</h2>
                 <p>This is the detailed content for the second link.</p>
             </div>
-            
+           
             <div id="section3" class="content">
                 <h2>Content for Fee</h2>
                 <p>This is the detailed content for the Fee section.</p>
+<div class="fee-section">
+    <h2>Fee Information</h2>
+    <table class="fee-details-table">
+        <thead>
+            <tr>
+                <th>Fee Category</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Due Date</th>
+                <th>Payment Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tuition</td>
+                <td>Semester Academic Fees</td>
+                <td>$5,000.00</td>
+                <td>September 1, 2023</td>
+                <td class="status-pending">Pending</td>
+            </tr>
+            <tr>
+                <td>Hostel</td>
+                <td>Accommodation Charges</td>
+                <td>$1,500.00</td>
+                <td>September 15, 2023</td>
+                <td class="status-unpaid">Not Paid</td>
+            </tr>
+            <tr>
+                <td>Library</td>
+                <td>Annual Library Membership</td>
+                <td>$100.00</td>
+                <td>October 1, 2023</td>
+                <td class="status-paid">Paid</td>
+            </tr>
+            <tr>
+                <td>Examination</td>
+                <td>Semester End Exam Fees</td>
+                <td>$250.00</td>
+                <td>November 15, 2023</td>
+                <td class="status-pending">Pending</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"><strong>Total Fees</strong></td>
+                <td colspan="3"><strong>$6,850.00</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="fee-summary">
+        <h3>Fee Summary</h3>
+        <p><strong>Total Fees:</strong> $6,850.00</p>
+        <p><strong>Paid Amount:</strong> $100.00</p>
+        <p><strong>Remaining Balance:</strong> $6,750.00</p>
+    </div>
+
+    <div class="payment-options">
+        <h3>Payment Methods</h3>
+        <ul>
+            <li>Online Banking</li>
+            <li>Credit Card</li>
+            <li>Debit Card</li>
+            <li>Cash Payment</li>
+            <li>Installment Plan</li>
+        </ul>
+    </div>
+</div>
             </div>
-            
+           
             <div id="section4" class="content">
                 <h2>Content for Attendance</h2>
                 <p>This is the detailed content for the Attendance section.</p>
             </div>
-            
+           
             <div id="section5" class="content">
                 <h2>Content for My Profile</h2>
                 <p>This is the detailed content for the third link.</p>
