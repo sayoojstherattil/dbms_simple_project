@@ -3,157 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Content Display</title>
-    <style>
-        /* Overall page layout */
-        .container {
-            display: flex;
-        }
 
-        /* Navigation section */
-        .navigation {
-            width: 200px; /* Fixed width for navigation */
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-
-        /* Content container */
-        .content-container {
-            flex-grow: 1;
-            padding: 20px;
-        }
-
-        /* Hide all content sections by default */
-        .content {
-            display: none;
-        }
-       
-        /* Links styling */
-        .navigation label {
-            display: block;
-            margin-bottom: 10px;
-            cursor: pointer;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-
-        /* Hover effect for links */
-        .navigation label:hover {
-            background-color: #e0e0e0;
-        }
-       
-        /* Show content when radio button is checked */
-        #content1:checked ~ .content-container #section1,
-        #content2:checked ~ .content-container #section2,
-        #content3:checked ~ .content-container #section3,
-        #content4:checked ~ .content-container #section4,
-        #content5:checked ~ .content-container #section5 {
-            display: block;
-        }
-
-        .attendance-box {
-            width: 250px;
-            height: 200px;
-            border: 2px solid #3498db;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .attendance-percentage {
-            font-size: 48px;
-            font-weight: bold;
-            color: #2ecc71;
-        }
-
-        .attendance-label {
-            font-size: 18px;
-            color: #34495e;
-            margin-top: 10px;
-        }
-
-        .attendance-status {
-            font-size: 16px;
-            margin-top: 10px;
-            color: #7f8c8d;
-        }
-       
-        .dropdown-container {
-            width: 300px;
-            margin: 20px;
-        }
-
-        .dropdown-header {
-            background-color: #f1f1f1;
-            padding: 10px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .dropdown-content {
-            display: none;
-            padding: 10px;
-            background-color: #f9f9f9;
-        }
-
-        .dropdown-toggle:checked ~ .dropdown-content {
-            display: block;
-        }
-
-        .subject-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-.fee-details-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
-    .fee-details-table th,
-    .fee-details-table td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-    }
-    .fee-details-table thead {
-        background-color: #f2f2f2;
-    }
-    .status-pending { color: orange; }
-    .status-unpaid { color: red; }
-    .status-paid { color: green; }
-
-    .faculties ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.faculties li {
-  background-color: #f7f7f7;
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.faculties h3 {
-  margin-top: 0;
-}
-
-.faculties p {
-  margin-bottom: 10px;
-}
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <?php include 'script.php'; ?>
 </head>
 <body>
     <div class="container">
@@ -347,11 +199,41 @@
             <div id="section4" class="content">
                 <h2>Content for Attendance</h2>
                 <p>This is the detailed content for the Attendance section.</p>
+		<div id="attendance-container">
+    <h2>Attendance Details</h2>
+    <form action="" method="post">
+        <select name="month" id="month-select">
+            <option value="">Select Month</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        <button type="submit">View Attendance</button>
+    </form>
+    <div id="attendance-details"></div>
+</div>
             </div>
            
             <div id="section5" class="content">
                 <h2>Content for My Profile</h2>
                 <p>This is the detailed content for the third link.</p>
+		<div class="profile-container">
+    <h2>Student Profile</h2>
+    <p>Student Name: <span id="studentName">John Doe</span></p>
+    <p>Student ID: <span id="studentID">S12345</span></p>
+    <p>Email: <span id="studentEmail">john.doe@example.com</span></p>
+    <p>Course: <span id="studentCourse">Computer Science</span></p>
+    <!-- Add more fields as necessary -->
+</div>
             </div>
         </div>
     </div>
