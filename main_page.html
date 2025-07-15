@@ -8,7 +8,7 @@
     <?php include 'script.php'; ?>
 </head>
 <body>
-    <div class="container">
+	<div class="container">
         <input type="radio" name="content" id="content1" hidden checked>
         <input type="radio" name="content" id="content2" hidden>
         <input type="radio" name="content" id="content3" hidden>
@@ -16,41 +16,59 @@
         <input type="radio" name="content" id="content5" hidden>
        
         <div class="navigation">
-            <label for="content1">Dashboard</label>
-            <label for="content2">Faculty</label>
-            <label for="content3">Fee</label>
-            <label for="content4">Attendance</label>
-            <label for="content5">My Profile</label>
+            <input type="radio" name="content" id="nav1" hidden>
+            <label for="content1">📊 Dashboard</label>
+            <input type="radio" name="content" id="nav2" hidden>
+            <label for="content2">👨‍🏫 Faculty</label>
+            <input type="radio" name="content" id="nav3" hidden>
+            <label for="content3">💰 Fee</label>
+            <input type="radio" name="content" id="nav4" hidden>
+            <label for="content4">📅 Attendance</label>
+            <input type="radio" name="content" id="nav5" hidden>
+            <label for="content5">👤 My Profile</label>
         </div>
        
         <div class="content-container">
             <div id="section1" class="content">
-                <h2>Content for Dashboard</h2>
-                <p>This is the detailed content for the first link.</p>
-                <div class="attendance-percentage">85%</div>
-                <div class="attendance-label">Total Attendance</div>
-                <div class="attendance-status">
-                    Status:
-                    <span class="good">Good</span>
+                <h2>Dashboard</h2>
+                <p>Welcome to your student portal dashboard. Here's an overview of your academic status.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Overall Attendance</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3.7</div>
+                        <div class="stat-label">Current GPA</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Courses Enrolled</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$6,750</div>
+                        <div class="stat-label">Pending Fees</div>
+                    </div>
                 </div>
 
                 <div class="dropdown-container">
                     <!-- Series 1 Dropdown -->
                     <div class="dropdown">
                         <input type="checkbox" id="series1" class="dropdown-toggle">
-                        <label for="series1" class="dropdown-header">Series 1</label>
+                        <label for="series1" class="dropdown-header">Series 1 Results</label>
                         <div class="dropdown-content">
                             <div class="subject-item">
                                 <span>Computer Networks</span>
-                                <span>40</span>
+                                <span>40/50</span>
                             </div>
                             <div class="subject-item">
-                                <span>Automata</span>
-                                <span>35</span>
+                                <span>Automata Theory</span>
+                                <span>35/50</span>
                             </div>
                             <div class="subject-item">
                                 <span>Architecture of IC</span>
-                                <span>45</span>
+                                <span>45/50</span>
                             </div>
                         </div>
                     </div>
@@ -58,19 +76,19 @@
                     <!-- Series 2 Dropdown -->
                     <div class="dropdown">
                         <input type="checkbox" id="series2" class="dropdown-toggle">
-                        <label for="series2" class="dropdown-header">Series 2</label>
+                        <label for="series2" class="dropdown-header">Series 2 Results</label>
                         <div class="dropdown-content">
                             <div class="subject-item">
                                 <span>Computer Networks</span>
-                                <span>38</span>
+                                <span>38/50</span>
                             </div>
                             <div class="subject-item">
-                                <span>Automata</span>
-                                <span>42</span>
+                                <span>Automata Theory</span>
+                                <span>42/50</span>
                             </div>
                             <div class="subject-item">
                                 <span>Architecture of IC</span>
-                                <span>37</span>
+                                <span>37/50</span>
                             </div>
                         </div>
                     </div>
@@ -78,19 +96,19 @@
                     <!-- Model Dropdown -->
                     <div class="dropdown">
                         <input type="checkbox" id="model" class="dropdown-toggle">
-                        <label for="model" class="dropdown-header">Model</label>
+                        <label for="model" class="dropdown-header">Model Exam Results</label>
                         <div class="dropdown-content">
                             <div class="subject-item">
                                 <span>Computer Networks</span>
-                                <span>45</span>
+                                <span>45/50</span>
                             </div>
                             <div class="subject-item">
-                                <span>Automata</span>
-                                <span>40</span>
+                                <span>Automata Theory</span>
+                                <span>40/50</span>
                             </div>
                             <div class="subject-item">
                                 <span>Architecture of IC</span>
-                                <span>42</span>
+                                <span>42/50</span>
                             </div>
                         </div>
                     </div>
@@ -98,142 +116,302 @@
             </div>
 
             <div id="section2" class="content">
-                <h2>Content for Faculty</h2>
-                <p>This is the detailed content for the second link.</p>
-		<div class="faculties">
-  <h2>Faculties</h2>
-  <ul>
-    <li>
-      <h3>Faculty of Engineering</h3>
-      <p>Dean: Dr. John Doe</p>
-      <p>Department: Computer Science, Electrical Engineering, Mechanical Engineering</p>
-    </li>
-    <li>
-      <h3>Faculty of Arts and Humanities</h3>
-      <p>Dean: Dr. Jane Smith</p>
-      <p>Department: English, History, Philosophy</p>
-    </li>
-    <li>
-      <h3>Faculty of Science</h3>
-      <p>Dean: Dr. Bob Johnson</p>
-      <p>Department: Biology, Chemistry, Physics</p>
-    </li>
-  </ul>
-</div>
-
+                <h2>Faculty Information</h2>
+                <p>Meet your faculty members and their departments.</p>
+                
+                <div class="faculties">
+                    <ul>
+                        <li>
+                            <h3>Faculty of Engineering</h3>
+                            <p><strong>Dean:</strong> Dr. John Doe</p>
+                            <p><strong>Email:</strong> john.doe@university.edu</p>
+                            <p><strong>Departments:</strong> Computer Science, Electrical Engineering, Mechanical Engineering</p>
+                            <p><strong>Office Hours:</strong> Mon-Fri 9:00 AM - 5:00 PM</p>
+                        </li>
+                        <li>
+                            <h3>Faculty of Arts and Humanities</h3>
+                            <p><strong>Dean:</strong> Dr. Jane Smith</p>
+                            <p><strong>Email:</strong> jane.smith@university.edu</p>
+                            <p><strong>Departments:</strong> English, History, Philosophy</p>
+                            <p><strong>Office Hours:</strong> Mon-Fri 10:00 AM - 4:00 PM</p>
+                        </li>
+                        <li>
+                            <h3>Faculty of Science</h3>
+                            <p><strong>Dean:</strong> Dr. Bob Johnson</p>
+                            <p><strong>Email:</strong> bob.johnson@university.edu</p>
+                            <p><strong>Departments:</strong> Biology, Chemistry, Physics</p>
+                            <p><strong>Office Hours:</strong> Mon-Fri 8:00 AM - 6:00 PM</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
            
             <div id="section3" class="content">
-                <h2>Content for Fee</h2>
-                <p>This is the detailed content for the Fee section.</p>
-<div class="fee-section">
-    <h2>Fee Information</h2>
-    <table class="fee-details-table">
-        <thead>
-            <tr>
-                <th>Fee Category</th>
-                <th>Description</th>
-                <th>Amount</th>
-                <th>Due Date</th>
-                <th>Payment Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tuition</td>
-                <td>Semester Academic Fees</td>
-                <td>$5,000.00</td>
-                <td>September 1, 2023</td>
-                <td class="status-pending">Pending</td>
-            </tr>
-            <tr>
-                <td>Hostel</td>
-                <td>Accommodation Charges</td>
-                <td>$1,500.00</td>
-                <td>September 15, 2023</td>
-                <td class="status-unpaid">Not Paid</td>
-            </tr>
-            <tr>
-                <td>Library</td>
-                <td>Annual Library Membership</td>
-                <td>$100.00</td>
-                <td>October 1, 2023</td>
-                <td class="status-paid">Paid</td>
-            </tr>
-            <tr>
-                <td>Examination</td>
-                <td>Semester End Exam Fees</td>
-                <td>$250.00</td>
-                <td>November 15, 2023</td>
-                <td class="status-pending">Pending</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="2"><strong>Total Fees</strong></td>
-                <td colspan="3"><strong>$6,850.00</strong></td>
-            </tr>
-        </tfoot>
-    </table>
+                <h2>Fee Information</h2>
+                <p>View your fee details and payment status.</p>
+                
+                <div class="fee-section">
+                    <table class="fee-details-table">
+                        <thead>
+                            <tr>
+                                <th>Fee Category</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Due Date</th>
+                                <th>Payment Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tuition</td>
+                                <td>Semester Academic Fees</td>
+                                <td>$5,000.00</td>
+                                <td>September 1, 2023</td>
+                                <td class="status-pending">Pending</td>
+                            </tr>
+                            <tr>
+                                <td>Hostel</td>
+                                <td>Accommodation Charges</td>
+                                <td>$1,500.00</td>
+                                <td>September 15, 2023</td>
+                                <td class="status-unpaid">Not Paid</td>
+                            </tr>
+                            <tr>
+                                <td>Library</td>
+                                <td>Annual Library Membership</td>
+                                <td>$100.00</td>
+                                <td>October 1, 2023</td>
+                                <td class="status-paid">Paid</td>
+                            </tr>
+                            <tr>
+                                <td>Examination</td>
+                                <td>Semester End Exam Fees</td>
+                                <td>$250.00</td>
+                                <td>November 15, 2023</td>
+                                <td class="status-pending">Pending</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"><strong>Total Fees</strong></td>
+                                <td colspan="3"><strong>$6,850.00</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
 
-    <div class="fee-summary">
-        <h3>Fee Summary</h3>
-        <p><strong>Total Fees:</strong> $6,850.00</p>
-        <p><strong>Paid Amount:</strong> $100.00</p>
-        <p><strong>Remaining Balance:</strong> $6,750.00</p>
-    </div>
+                    <div class="fee-summary">
+                        <h3>Fee Summary</h3>
+                        <p><strong>Total Fees:</strong> $6,850.00</p>
+                        <p><strong>Paid Amount:</strong> $100.00</p>
+                        <p><strong>Remaining Balance:</strong> $6,750.00</p>
+                    </div>
 
-    <div class="payment-options">
-        <h3>Payment Methods</h3>
-        <ul>
-            <li>Online Banking</li>
-            <li>Credit Card</li>
-            <li>Debit Card</li>
-            <li>Cash Payment</li>
-            <li>Installment Plan</li>
-        </ul>
-    </div>
-</div>
+                    <div class="payment-options">
+                        <h3>Payment Methods</h3>
+                        <ul>
+                            <li>💳 Online Banking</li>
+                            <li>💳 Credit Card</li>
+                            <li>💳 Debit Card</li>
+                            <li>💵 Cash Payment</li>
+                            <li>📊 Installment Plan</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
            
             <div id="section4" class="content">
-                <h2>Content for Attendance</h2>
-                <p>This is the detailed content for the Attendance section.</p>
-		<div id="attendance-container">
-    <h2>Attendance Details</h2>
-    <form action="" method="post">
-        <select name="month" id="month-select">
-            <option value="">Select Month</option>
-            <option value="01">January</option>
-            <option value="02">February</option>
-            <option value="03">March</option>
-            <option value="04">April</option>
-            <option value="05">May</option>
-            <option value="06">June</option>
-            <option value="07">July</option>
-            <option value="08">August</option>
-            <option value="09">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-        </select>
-        <button type="submit">View Attendance</button>
-    </form>
-    <div id="attendance-details"></div>
-</div>
+                <h2>Attendance Records</h2>
+                <p>Track your attendance across all subjects and view detailed statistics.</p>
+                
+                <div class="attendance-box">
+                    <div class="attendance-percentage">85%</div>
+                    <div class="attendance-label">Overall Attendance</div>
+                    <div class="attendance-status">Status: <span style="color: #2ecc71;">Good</span></div>
+                </div>
+
+                <div class="attendance-grid">
+                    <div class="subject-attendance">
+                        <h3>Computer Networks</h3>
+                        <div class="attendance-info">
+                            <span>Classes Attended: 34</span>
+                            <span>Total Classes: 40</span>
+                        </div>
+                        <div class="attendance-bar">
+                            <div class="attendance-fill good" style="width: 85%;"></div>
+                        </div>
+                        <div style="text-align: center; font-weight: bold; color: #2ecc71;">85%</div>
+                    </div>
+
+                    <div class="subject-attendance">
+                        <h3>Automata Theory</h3>
+                        <div class="attendance-info">
+                            <span>Classes Attended: 28</span>
+                            <span>Total Classes: 35</span>
+                        </div>
+                        <div class="attendance-bar">
+                            <div class="attendance-fill average" style="width: 80%;"></div>
+                        </div>
+                        <div style="text-align: center; font-weight: bold; color: #f39c12;">80%</div>
+                    </div>
+
+                    <div class="subject-attendance">
+                        <h3>Architecture of IC</h3>
+                        <div class="attendance-info">
+                            <span>Classes Attended: 36</span>
+                            <span>Total Classes: 38</span>
+                        </div>
+                        <div class="attendance-bar">
+                            <div class="attendance-fill good" style="width: 95%;"></div>
+                        </div>
+                        <div style="text-align: center; font-weight: bold; color: #2ecc71;">95%</div>
+                    </div>
+
+                    <div class="subject-attendance">
+                        <h3>Database Systems</h3>
+                        <div class="attendance-info">
+                            <span>Classes Attended: 25</span>
+                            <span>Total Classes: 42</span>
+                        </div>
+                        <div class="attendance-bar">
+                            <div class="attendance-fill poor" style="width: 60%;"></div>
+                        </div>
+                        <div style="text-align: center; font-weight: bold; color: #e74c3c;">60%</div>
+                    </div>
+
+                    <div class="subject-attendance">
+                        <h3>Software Engineering</h3>
+                        <div class="attendance-info">
+                            <span>Classes Attended: 32</span>
+                            <span>Total Classes: 36</span>
+                        </div>
+                        <div class="attendance-bar">
+                            <div class="attendance-fill good" style="width: 89%;"></div>
+                        </div>
+                        <div style="text-align: center; font-weight: bold; color: #2ecc71;">89%</div>
+                    </div>
+
+                    <div class="subject-attendance">
+                        <h3>Web Technologies</h3>
+                        <div class="attendance-info">
+                            <span>Classes Attended: 30</span>
+                            <span>Total Classes: 33</span>
+                        </div>
+                        <div class="attendance-bar">
+                            <div class="attendance-fill good" style="width: 91%;"></div>
+                        </div>
+                        <div style="text-align: center; font-weight: bold; color: #2ecc71;">91%</div>
+                    </div>
+                </div>
             </div>
            
             <div id="section5" class="content">
-                <h2>Content for My Profile</h2>
-                <p>This is the detailed content for the third link.</p>
-		<div class="profile-container">
-    <h2>Student Profile</h2>
-    <p>Student Name: <span id="studentName">John Doe</span></p>
-    <p>Student ID: <span id="studentID">S12345</span></p>
-    <p>Email: <span id="studentEmail">john.doe@example.com</span></p>
-    <p>Course: <span id="studentCourse">Computer Science</span></p>
-    <!-- Add more fields as necessary -->
-</div>
+                <h2>My Profile</h2>
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-image">JS</div>
+                        <div class="profile-info">
+                            <h1>John Smith</h1>
+                            <p><strong>Student ID:</strong> CS2023001</p>
+                            <p><strong>Program:</strong> Bachelor of Computer Science</p>
+                            <p><strong>Year:</strong> 3rd Year</p>
+                            <p><strong>Status:</strong> Active</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-sections">
+                        <div class="profile-section">
+                            <h3>Personal Information</h3>
+                            <div class="info-row">
+                                <span class="info-label">Full Name:</span>
+                                <span class="info-value">John Smith</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Date of Birth:</span>
+                                <span class="info-value">January 15, 2002</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Gender:</span>
+                                <span class="info-value">Male</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Blood Group:</span>
+                                <span class="info-value">O+</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Nationality:</span>
+                                <span class="info-value">Indian</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-section">
+                            <h3>Contact Information</h3>
+                            <div class="info-row">
+                                <span class="info-label">Email:</span>
+                                <span class="info-value">john.smith@student.edu</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Phone:</span>
+                                <span class="info-value">+91 9876543210</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Address:</span>
+                                <span class="info-value">123 Student Street, University City</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Emergency Contact:</span>
+                                <span class="info-value">+91 9876543211</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-section">
+                            <h3>Academic Information</h3>
+                            <div class="info-row">
+                                <span class="info-label">Student ID:</span>
+                                <span class="info-value">CS2023001</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Program:</span>
+                                <span class="info-value">Bachelor of Computer Science</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Specialization:</span>
+                                <span class="info-value">Software Engineering</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Current Semester:</span>
+                                <span class="info-value">6th Semester</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Admission Year:</span>
+                                <span class="info-value">2021</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Current GPA:</span>
+                                <span class="info-value">3.7/4.0</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-section">
+                            <h3>Guardian Information</h3>
+                            <div class="info-row">
+                                <span class="info-label">Father's Name:</span>
+                                <span class="info-value">Robert Smith</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Mother's Name:</span>
+                                <span class="info-value">Mary Smith</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Guardian Phone:</span>
+                                <span class="info-value">+91 9876543211</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Guardian Email:</span>
+                                <span class="info-value">robert.smith@email.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
