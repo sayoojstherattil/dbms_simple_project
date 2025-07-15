@@ -1,3 +1,5 @@
+USE student_portal;
+
 -- Insert sample users
 INSERT INTO users (username, email, password, role) VALUES 
 ('john_student', 'john@student.edu', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'student'),
