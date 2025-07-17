@@ -1,4 +1,4 @@
-CREATE DATABASE student_portal;
+CREATE DATABASE IF NOT EXISTS student_portal CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 USE student_portal;
 
@@ -10,7 +10,7 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     role ENUM('student', 'faculty', 'admin') DEFAULT 'student',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB;
 
 -- Students table
 CREATE TABLE students (
@@ -38,8 +38,8 @@ CREATE TABLE students (
     guardian_email VARCHAR(100),
     emergency_contact VARCHAR(15),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 -- Faculty table
 CREATE TABLE faculty (
@@ -51,8 +51,8 @@ CREATE TABLE faculty (
     position VARCHAR(50),
     office_hours VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 -- Subjects table
 CREATE TABLE subjects (
@@ -63,8 +63,8 @@ CREATE TABLE subjects (
     semester INT,
     faculty_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (faculty_id) REFERENCES faculty(id)
-);
+    FOREIGN KEY (faculty_id) REFERENCES faculty(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
 
 -- Enrollments table
 CREATE TABLE enrollments (
@@ -73,9 +73,9 @@ CREATE TABLE enrollments (
     subject_id INT,
     enrollment_date DATE,
     status ENUM('Active', 'Completed', 'Dropped') DEFAULT 'Active',
-    FOREIGN KEY (student_id) REFERENCES students(id),
-    FOREIGN KEY (subject_id) REFERENCES subjects(id)
-);
+    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
+    FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 -- Attendance table
 CREATE TABLE attendance (
@@ -85,9 +85,9 @@ CREATE TABLE attendance (
     attendance_date DATE,
     status ENUM('Present', 'Absent', 'Late') DEFAULT 'Present',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (student_id) REFERENCES students(id),
-    FOREIGN KEY (subject_id) REFERENCES subjects(id)
-);
+    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
+    FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 -- Exams table
 CREATE TABLE exams (
@@ -98,8 +98,8 @@ CREATE TABLE exams (
     max_marks INT DEFAULT 50,
     exam_date DATE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (subject_id) REFERENCES subjects(id)
-);
+    FOREIGN KEY (subject_id) REFERENCES subjects(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 -- Results table
 CREATE TABLE results (
@@ -109,9 +109,9 @@ CREATE TABLE results (
     marks_obtained INT,
     grade VARCHAR(2),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (student_id) REFERENCES students(id),
-    FOREIGN KEY (exam_id) REFERENCES exams(id)
-);
+    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
+    FOREIGN KEY (exam_id) REFERENCES exams(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 -- Fee categories table
 CREATE TABLE fee_categories (
@@ -121,7 +121,7 @@ CREATE TABLE fee_categories (
     amount DECIMAL(10,2) NOT NULL,
     due_date DATE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB;
 
 -- Fee payments table
 CREATE TABLE fee_payments (
@@ -134,9 +134,9 @@ CREATE TABLE fee_payments (
     status ENUM('Pending', 'Paid', 'Overdue') DEFAULT 'Pending',
     transaction_id VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (student_id) REFERENCES students(id),
-    FOREIGN KEY (fee_category_id) REFERENCES fee_categories(id)
-);
+    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
+    FOREIGN KEY (fee_category_id) REFERENCES fee_categories(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
 
 -- Sessions table for authentication
 CREATE TABLE sessions (
@@ -145,5 +145,5 @@ CREATE TABLE sessions (
     session_token VARCHAR(255) UNIQUE NOT NULL,
     expires_at TIMESTAMP,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
-);
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB;

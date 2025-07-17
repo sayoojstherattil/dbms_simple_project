@@ -43,14 +43,10 @@ INSERT INTO faculty (user_id, name, email, department, position, office_hours) V
 (NULL, 'Dr. Bob Johnson', 'bob.johnson@university.edu', 'Science', 'Dean', 'Mon-Fri 8:00 AM - 6:00 PM');
 
 -- Assign faculty to subjects
-UPDATE subjects SET faculty_id = 1 WHERE id = 1;
-UPDATE subjects SET faculty_id = 1 WHERE id = 2;
-UPDATE subjects SET faculty_id = 2 WHERE id = 3;
-UPDATE subjects SET faculty_id = 1 WHERE id = 4;
-UPDATE subjects SET faculty_id = 2 WHERE id = 5;
-UPDATE subjects SET faculty_id = 1 WHERE id = 6;
+UPDATE subjects SET faculty_id = 1 WHERE id IN (1, 2, 4, 6);
+UPDATE subjects SET faculty_id = 2 WHERE id IN (3, 5);
 
--- Insert sample attendance records
+-- Insert sample attendance records using multi-row inserts for better performance
 -- For Computer Networks (subject_id=1)
 INSERT INTO attendance (student_id, subject_id, attendance_date, status) VALUES 
 (1, 1, '2023-06-05', 'Present'),
