@@ -1,4 +1,12 @@
 /* style.css */
+.content {
+    display: none;
+}
+
+#section1 {
+    display: block;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -29,7 +37,8 @@ body {
 }
 
 .navigation label:hover {
-    background-color: #34495e;
+    background-color: #3d566e;
+    cursor: pointer;
 }
 
 .content-container {
@@ -39,16 +48,11 @@ body {
     overflow-y: auto;
 }
 
-.content {
-    display: none;
-    padding: 20px;
-}
-
-input[name="content"]:checked ~ .content-container #section1,
-input[name="content"]:checked ~ .content-container #section2,
-input[name="content"]:checked ~ .content-container #section3,
-input[name="content"]:checked ~ .content-container #section4,
-input[name="content"]:checked ~ .content-container #section5 {
+#content1:checked ~ .content-container #section1,
+#content2:checked ~ .content-container #section2,
+#content3:checked ~ .content-container #section3,
+#content4:checked ~ .content-container #section4,
+#content5:checked ~ .content-container #section5 {
     display: block;
 }
 

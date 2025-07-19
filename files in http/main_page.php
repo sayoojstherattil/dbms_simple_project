@@ -105,6 +105,40 @@ $faculty_data = $faculty_stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     <title>Content Display</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all navigation labels
+    const labels = document.querySelectorAll('.navigation label');
+    
+    // Add click handlers to each label
+    labels.forEach(label => {
+        label.addEventListener('click', function() {
+            // Hide all content sections
+            document.querySelectorAll('.content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Show the selected content
+            const targetId = this.getAttribute('for');
+            const contentId = targetId.replace('content', 'section');
+            document.getElementById(contentId).style.display = 'block';
+            
+            // Update radio button state
+            document.getElementById(targetId).checked = true;
+            
+            // Update active tab styling
+            document.querySelectorAll('.navigation label').forEach(lbl => {
+                lbl.style.backgroundColor = '';
+                lbl.style.borderLeft = '';
+            });
+            this.style.backgroundColor = '#34495e';
+            this.style.borderLeft = '4px solid #3498db';
+        });
+    });
+});
+</script>
+
 <body>
     <div class="container">
         <input type="radio" name="content" id="content1" hidden checked>
@@ -114,15 +148,10 @@ $faculty_data = $faculty_stmt->get_result()->fetch_all(MYSQLI_ASSOC);
         <input type="radio" name="content" id="content5" hidden>
        
         <div class="navigation">
-            <input type="radio" name="content" id="nav1" hidden>
             <label for="content1">📊 Dashboard</label>
-            <input type="radio" name="content" id="nav2" hidden>
             <label for="content2">👨‍🏫 Faculty</label>
-            <input type="radio" name="content" id="nav3" hidden>
             <label for="content3">💰 Fee</label>
-            <input type="radio" name="content" id="nav4" hidden>
             <label for="content4">📅 Attendance</label>
-            <input type="radio" name="content" id="nav5" hidden>
             <label for="content5">👤 My Profile</label>
             <a href="logout.php" style="float: right; margin-right: 20px; color: #e74c3c;">Logout</a>
         </div>
