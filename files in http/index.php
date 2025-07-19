@@ -1,3 +1,11 @@
+<?php
+// index.php
+session_start();
+if (isset($_SESSION['user_id'])) {
+    header("Location: main_page.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,12 +53,21 @@
         .login-btn:hover {
             background-color: #45a049;
         }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="main_page.html" method="get">
+        <?php if (isset($_SESSION['login_error'])): ?>
+            <div class="error-message"><?= $_SESSION['login_error'] ?></div>
+            <?php unset($_SESSION['login_error']); ?>
+        <?php endif; ?>
+        <form action="auth.php" method="post">
             <div class="form-group">
                 <input type="text" name="username" placeholder="Username" required>
             </div>
@@ -62,4 +79,3 @@
     </div>
 </body>
 </html>
-
